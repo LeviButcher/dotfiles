@@ -3,3 +3,6 @@ size = 14.0
 
 [font.normal]
 family = "firacode nerd font"
+=======
+[font.normal]
+family = "FiraCode"
