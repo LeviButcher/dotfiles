@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/levi/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["guard.nvim"] = {
+    loaded = true,
+    path = "/home/levi/.local/share/nvim/site/pack/packer/start/guard.nvim",
+    url = "https://github.com/nvimdev/guard.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/levi/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -214,8 +219,8 @@ time([[Defining packer_plugins]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 vim.cmd [[ packadd nvim-treesitter-context ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

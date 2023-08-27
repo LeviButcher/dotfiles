@@ -66,4 +66,6 @@ return require("packer").startup(function(use)
 	use("theHamsta/nvim-dap-virtual-text")
 
 	use("folke/neodev.nvim")
+
+	use("nvimdev/guard.nvim")
 end)
