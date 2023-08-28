@@ -2,7 +2,7 @@ local ft = require("guard.filetype")
 
 ft("lua"):fmt("stylua")
 
-ft("typescript,javascript,typescriptreact"):fmt("prettier"):fmt({
+ft("typescript,javascript,typescriptreact"):fmt("prettier"):append({
 	cmd = "rustywind",
 	stdin = true,
 	args = {
