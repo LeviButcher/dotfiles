@@ -11,7 +11,8 @@ ft("typescript,javascript,typescriptreact"):fmt("prettier"):fmt({
 })
 
 ft("rust"):fmt("rustfmt")
-ft("css"):fmt("css_ls")
+
+ft("css"):fmt("lsp")
 
 require("guard").setup({
 	fmt_on_save = true,

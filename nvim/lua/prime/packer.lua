@@ -25,7 +25,6 @@ return require("packer").startup(function(use)
 		after = "nvim-treesitter",
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
-	use("mbbill/undotree")
 
 	use({
 		"VonHeikemen/lsp-zero.nvim",
@@ -43,29 +42,27 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	-- Diagnostic/LSP stuff
+	-- Diagnostic/LSP stuff/Formatter
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-	})
+	use("nvimdev/guard.nvim")
 
+	-- utils
 	use({
 		"kylechui/nvim-surround",
 		tag = "*",
 	})
-
 	use("theprimeagen/harpoon")
 	use("tpope/vim-fugitive")
+	use("mbbill/undotree")
 
+	-- debugger
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
 
+	-- Language Toolkits
 	use("folke/neodev.nvim")
-
-	use("nvimdev/guard.nvim")
 end)
