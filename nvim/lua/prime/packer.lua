@@ -57,6 +57,7 @@ return require("packer").startup(function(use)
 	use("theprimeagen/harpoon")
 	use("tpope/vim-fugitive")
 	use("mbbill/undotree")
+	use("numToStr/Comment.nvim")
 
 	-- debugger
 	use("mfussenegger/nvim-dap")
