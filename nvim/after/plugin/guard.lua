@@ -14,6 +14,8 @@ ft("rust"):fmt("rustfmt")
 
 ft("css"):fmt("lsp")
 
+ft("python"):fmt("black")
+
 require("guard").setup({
 	fmt_on_save = true,
 	lsp_as_default_formatter = true,
