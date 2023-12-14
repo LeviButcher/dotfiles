@@ -12,6 +12,7 @@ return require("packer").startup(function(use)
 
 	-- Colors
 	use("catppuccin/nvim")
+	use("rebelot/kanagawa.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("nvim-treesitter/playground")
@@ -47,7 +48,9 @@ return require("packer").startup(function(use)
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
-	use("nvimdev/guard.nvim")
+	use({ "nvimdev/guard.nvim", requires = {
+		"nvimdev/guard-collection",
+	} })
 
 	-- utils
 	use({
@@ -65,5 +68,5 @@ return require("packer").startup(function(use)
 	use("theHamsta/nvim-dap-virtual-text")
 
 	-- Language Toolkits
-	use("folke/neodev.nvim")
+	use({ "folke/neodev.nvim" })
 end)
