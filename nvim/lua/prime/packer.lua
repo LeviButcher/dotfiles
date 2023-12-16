@@ -27,19 +27,25 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+
 	use({
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v2.x",
-		requires = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" }, -- Required
-			{ "williamboman/mason.nvim" }, -- Optional
-			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
+		branch = "v3.x",
+	})
 
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" }, -- Required
-			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
-			{ "L3MON4D3/LuaSnip" }, -- Required
+	use({
+		"neovim/nvim-lspconfig",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+		},
+	})
+
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"L3MON4D3/LuaSnip",
 		},
 	})
 
@@ -67,6 +73,6 @@ return require("packer").startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
 
-	-- Language Toolkits
-	use({ "folke/neodev.nvim" })
+	-- -- Language Toolkits
+	-- use({ "folke/neodev.nvim" })
 end)
