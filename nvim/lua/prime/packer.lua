@@ -1,10 +1,13 @@
+-- If new packages are added, update .luarc.json with new paths to packages
+-- from generate packer list
+
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
 
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.2",
+		tag = "0.1.5",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
@@ -72,7 +75,4 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
-
-	-- -- Language Toolkits
-	-- use({ "folke/neodev.nvim" })
 end)
