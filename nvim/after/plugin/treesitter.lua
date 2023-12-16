@@ -1,4 +1,6 @@
 require("nvim-treesitter.configs").setup({
+	modules = {},
+	ignore_install = {},
 	-- A list of parser names, or "all" (the four listed parsers should always be installed)
 	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "typescript" },
 

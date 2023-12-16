@@ -2,9 +2,7 @@ local trouble = require("trouble")
 
 trouble.setup()
 
-vim.keymap.set("n", "<leader>xx", function()
-	trouble.open()
-end)
+vim.keymap.set("n", "<leader>xx", trouble.open)
 
 vim.keymap.set("n", "<leader>xw", function()
 	trouble.open("workspace_diagnostics")
