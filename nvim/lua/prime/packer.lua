@@ -57,6 +57,7 @@ return require("packer").startup(function(use)
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
 	})
+
 	use({ "nvimdev/guard.nvim", requires = {
 		"nvimdev/guard-collection",
 	} })
@@ -70,9 +71,21 @@ return require("packer").startup(function(use)
 	use("tpope/vim-fugitive")
 	use("mbbill/undotree")
 	use("numToStr/Comment.nvim")
+	use({
+		"folke/zen-mode.nvim",
+		opts = {
+			plugins = {
+				alacritty = {
+					enabled = false,
+					font = "14", -- font size
+				},
+			},
+		},
+	})
 
 	-- debugger
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("theHamsta/nvim-dap-virtual-text")
+	use("Hoffs/omnisharp-extended-lsp.nvim")
 end)
