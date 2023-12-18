@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/levi/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/levi/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/levi/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/levi/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/levi/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/Users/Levi.Butcher@hdsupply.com/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/Users/Levi.Butcher@hdsupply.com/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/Users/Levi.Butcher@hdsupply.com/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/Users/Levi.Butcher@hdsupply.com/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/Levi.Butcher@hdsupply.com/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,147 +76,157 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["Comment.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
   LuaSnip = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["guard-collection"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/guard-collection",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/guard-collection",
     url = "https://github.com/nvimdev/guard-collection"
   },
   ["guard.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/guard.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/guard.nvim",
     url = "https://github.com/nvimdev/guard.nvim"
   },
   harpoon = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/harpoon",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   nvim = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim",
     url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-dap-ui"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-dap-virtual-text"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-surround"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-surround",
     url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-context",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-treesitter-textobjects"] = {
     load_after = {},
     loaded = true,
     needs_bufread = false,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["omnisharp-extended-lsp.nvim"] = {
+    loaded = true,
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/omnisharp-extended-lsp.nvim",
+    url = "https://github.com/Hoffs/omnisharp-extended-lsp.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/playground",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/playground",
     url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
   undotree = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/undotree",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/levi/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/Levi.Butcher@hdsupply.com/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 
@@ -224,8 +234,8 @@ time([[Defining packer_plugins]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
-vim.cmd [[ packadd nvim-treesitter-context ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+vim.cmd [[ packadd nvim-treesitter-context ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

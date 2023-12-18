@@ -24,3 +24,7 @@ cmp.setup({
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 	}),
 })
+
+require("lspconfig").omnisharp.setup({
+	handlers = { ["textDocument/definition"] = require("omnisharp_extended").handler },
+})

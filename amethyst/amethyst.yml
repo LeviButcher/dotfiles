@@ -33,19 +33,18 @@ layouts:
   # - widescreen-tall-right
   # - bsp
 
-  # First mod (default option + shift).
+# First mod (default option + shift).
+# - option
+# - shift
+# - control
+# - command
 mod1:
   - command
   - shift
-  # - option
-  # - shift
-  # - control
-  # - command
 
-  # Second mod (default option + shift + control).
+# Second mod (default option + shift + control).
 mod2:
   - command
-  # - shift
   - option
   # - shift
   # - control
@@ -74,15 +73,15 @@ mod2:
   #   mod: mod2
   #   key: space
 
-  # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
-  # shrink-main:
-  #   mod: mod1
-  #   key: h
+# Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
+# shrink-main:
+#   mod: mod1
+#   key: h
 
-  # Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
-  # expand-main:
-  #   mod: mod1
-  #   key: l
+# Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
+# expand-main:
+#   mod: mod1
+#   key: l
 
   # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
   # increase-main:
@@ -127,14 +126,14 @@ mod2:
   #   key: m
 
   # Focus the next screen in the list going counter-clockwise.
-  # focus-screen-ccw:
-  #   mod: mod1
-  #   key: p
+focus-screen-ccw:
+  mod: mod1
+  key: <None>
 
   # Focus the next screen in the list going clockwise.
-  # focus-screen-cw:
-  #   mod: mod1
-  #   key: n
+focus-screen-cw:
+  mod: mod1
+  key: <None>
 
   # Move the currently focused window onto the next screen in the list going counter-clockwise.
   # swap-screen-ccw:
@@ -316,4 +315,4 @@ window-max-count: 0
 # screen-padding-bottom: 0
 #
 # true to maintain layout state across application executions (default true).
-# restore-layouts-on-launch: true
+restore-layouts-on-launch: false 
