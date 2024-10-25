@@ -1,7 +1,7 @@
 * {
-lightbg: #141a1b;
-background: #141a1b;
-lightfg: #16a085;
+lightbg: #222222;
+background: #222222;
+lightfg: #e44138;
 foreground: #eeeeee;
 }
 window {

@@ -1,0 +1,7 @@
+[[search_dirs]]
+path = "/home/levib/.config"
+depth = 10
+
+[[search_dirs]]
+path = "/home/levib/Projects"
+depth = 10
