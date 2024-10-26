@@ -5,8 +5,12 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     { "kylechui/nvim-surround" },
-    { "theprimeagen/harpoon" },
     { "tpope/vim-fugitive" },
-    { "mbbill/undotree" },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+    -- { "mbbill/undotree" },
     { "numToStr/Comment.nvim" },
 }
