@@ -1,6 +1,3 @@
--- If new packages are added, update .luarc.json with new paths to packages
--- from generate packer list
-
 return require("packer").startup(function(use)
 	-- Packer can manage itself
 	use("wbthomason/packer.nvim")
@@ -30,29 +27,16 @@ return require("packer").startup(function(use)
 		requires = "nvim-treesitter/nvim-treesitter",
 	})
 
+    -- Lsp+cmp setup
+    use({'neovim/nvim-lspconfig'})
+    use({'hrsh7th/nvim-cmp'})
+    use({'hrsh7th/cmp-nvim-lsp'})
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
+	use("neovim/nvim-lspconfig")
 
-	use({
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-	})
 
-	use({
-		"neovim/nvim-lspconfig",
-		requires = {
-			"hrsh7th/cmp-nvim-lsp",
-		},
-	})
-
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"L3MON4D3/LuaSnip",
-		},
-	})
-
-	-- Diagnostic/LSP stuff/Formatter
+	-- Diagnostic/Formatter
 	use({
 		"folke/trouble.nvim",
 		requires = "nvim-tree/nvim-web-devicons",
