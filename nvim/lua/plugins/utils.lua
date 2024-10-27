@@ -1,5 +1,4 @@
 return {
-    { "kylechui/nvim-surround", lazy = true },
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -45,7 +44,10 @@ return {
         }
     },
     {
-        "numToStr/Comment.nvim", lazy = true
+        "echasnovski/mini.surround", version = false
+    },
+    {
+        "echasnovski/mini.comment", version = false
     },
     {
         "NeogitOrg/neogit",
