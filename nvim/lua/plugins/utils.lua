@@ -1,18 +1,52 @@
 return {
-    {
-        "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
-    { "kylechui/nvim-surround" },
-    -- { "tpope/vim-fugitive" },
+    { "kylechui/nvim-surround", lazy = true },
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = { "nvim-lua/plenary.nvim" },
+        keys = {
+            {
+                "<leader>a",
+                function()
+                    require("harpoon"):list():add()
+                end
+            },
+            {
+                "<C-e>",
+                function()
+                    local harpoon = require("harpoon")
+                    harpoon.ui:toggle_quick_menu(harpoon:list())
+                end
+            },
+            {
+                "<C-h>",
+                function() require("harpoon"):list():select(1) end
+            },
+            {
+                "<C-t>",
+                function() require("harpoon"):list():select(2) end
+            },
+            {
+                "<C-n>",
+                function() require("harpoon"):list():select(3) end
+            },
+            {
+                "<C-s>",
+                function() require("harpoon"):list():select(4) end
+            },
+            {
+                "<C-S-P>",
+                function() require("harpoon"):list():prev() end
+            },
+            {
+                "<C-S-N>",
+                function() require("harpoon"):list():next() end
+            },
+        }
     },
-    -- { "mbbill/undotree" },
-    { "numToStr/Comment.nvim" },
+    {
+        "numToStr/Comment.nvim", lazy = true
+    },
     {
         "NeogitOrg/neogit",
         dependencies = {
@@ -21,6 +55,14 @@ return {
             -- Only one of these is needed.
             "nvim-telescope/telescope.nvim", -- optional
         },
-        config = true
-    }
+        config = true,
+        keys = {
+            {
+                "<leader>gs",
+                function()
+                    require("neogit").open()
+                end
+            },
+        }
+    },
 }

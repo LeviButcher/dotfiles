@@ -10,8 +10,8 @@ return {
             },
         },
     },
-    { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-    {                                        -- optional completion source for require statements and module annotations
+    { "Bilal2453/luvit-meta",              lazy = true }, -- optional `vim.uv` typings
+    {                                                     -- optional completion source for require statements and module annotations
         "hrsh7th/nvim-cmp",
         opts = function(_, opts)
             opts.sources = opts.sources or {}
@@ -22,17 +22,8 @@ return {
         end,
         dependencies = { 'hrsh7th/cmp-nvim-lsp', 'neovim/nvim-lspconfig' },
     },
-    { "williamboman/mason.nvim", dependencies = { "williamboman/mason-lspconfig.nvim" },
-    },
-    -- Diagnostic/Formatter
     {
-        "folke/trouble.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
+        "williamboman/mason.nvim", dependencies = { "williamboman/mason-lspconfig.nvim" },
     },
-    {
-        "nvimdev/guard.nvim",
-        dependencies = {
-            "nvimdev/guard-collection",
-        }
-    },
+    { "Hoffs/omnisharp-extended-lsp.nvim", ft = "cs" },
 }
