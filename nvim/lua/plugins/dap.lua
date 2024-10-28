@@ -59,7 +59,6 @@ return {
                 dapui.close()
             end
         end,
-        lazy = false,
         keys = {
             {
                 "<F5>",
