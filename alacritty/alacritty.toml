@@ -1,8 +1,8 @@
 [font]
-size = 14.0
+size = 16.0
 
 [font.normal]
 family = "firacode nerd font"
-=======
-[font.normal]
-family = "FiraCode"
+
+# [font.normal]
+# family = "FiraCode"

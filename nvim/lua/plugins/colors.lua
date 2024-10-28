@@ -11,4 +11,7 @@ return {
             vim.cmd.colorscheme(color)
         end
     },
+    {
+        "rose-pine/neovim",
+    },
 }
