@@ -3,15 +3,16 @@ return {
         "mfussenegger/nvim-dap",
         dependencies = {
             {
-                "rcarriga/nvim-dap-ui",
-                dependencies = {
-                    "nvim-neotest/nvim-nio"
-                }
+                {
+                    "rcarriga/nvim-dap-ui",
+                    dependencies = {
+                        "nvim-neotest/nvim-nio"
+                    }
+                },
             },
             -- virtual text for the debugger
             {
                 "theHamsta/nvim-dap-virtual-text",
-                opts = {},
             },
         },
         config = function()
@@ -40,6 +41,7 @@ return {
             }
 
             local dapui = require("dapui")
+            dapui.setup()
 
             dap.listeners.before.attach.dapui_config = function()
                 dapui.open()
@@ -57,6 +59,7 @@ return {
                 dapui.close()
             end
         end,
+        lazy = false,
         keys = {
             {
                 "<F5>",
