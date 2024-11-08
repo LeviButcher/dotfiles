@@ -1,5 +1,18 @@
 return {
     {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*",
+        build = "make install_jsregexp",
+        dependencies = {
+            'saadparwaiz1/cmp_luasnip',
+            "rafamadriz/friendly-snippets",
+        },
+        opts = {
+            history = true,
+            delete_check_events = "TextChanged"
+        }
+    },
+    {
         "neovim/nvim-lspconfig",
         config = function()
             vim.opt.signcolumn = 'yes'
@@ -58,19 +71,26 @@ return {
                 group_index = 0, -- set group index to 0 to skip loading LuaLS completions
             })
         end,
-        dependencies = { 'hrsh7th/cmp-nvim-lsp', 'neovim/nvim-lspconfig', "f3fora/cmp-spell" },
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',
+            'neovim/nvim-lspconfig',
+            "f3fora/cmp-spell",
+        },
         config = function()
             local cmp = require('cmp')
+            require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
                 sources = {
                     { name = 'nvim_lsp' },
                     { name = 'spell' },
+                    { name = "luasnip" }
                 },
                 snippet = {
                     expand = function(args)
                         -- You need Neovim v0.10 to use vim.snippet
-                        vim.snippet.expand(args.body)
+                        -- vim.snippet.expand(args.body) -- native snippets
+                        require('luasnip').lsp_expand(args.body)
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
@@ -98,6 +118,8 @@ return {
             "williamboman/mason-lspconfig.nvim",
         },
     },
+
+
     -- Not working at this time
     -- {
     --     "Decodetalkers/csharpls-extended-lsp.nvim",
