@@ -21,7 +21,7 @@ return {
 
             ft("rust"):fmt("rustfmt")
 
-            ft("css"):fmt("lsp")
+            ft("css"):fmt("prettier"):fmt("lsp")
 
             vim.g.guard_config = {
                 fmt_on_save = true,
