@@ -1,3 +1,7 @@
 [[search_dirs]]
 path = "/home/levi/Projects"
 depth = 10
+
+[[search_dirs]]
+path = "/home/levi/.config"
+depth = 10
