@@ -104,36 +104,26 @@ return {
         end
     },
     {
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-            require("mason-lspconfig").setup()
-            require("mason-lspconfig").setup_handlers {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup {}
-                end,
-            }
-        end,
+        "mason-org/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = { "lua_ls", "rust_analyzer" },
+        },
         dependencies = {
-            "williamboman/mason-lspconfig.nvim",
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
         },
     },
 
 
     -- Not working at this time
-    -- {
-    --     "Decodetalkers/csharpls-extended-lsp.nvim",
-    --     ft = "cs",
-    --     init = function()
-    --         require("lspconfig").csharp_ls.setup({
-    --             handlers = {
-    --                 ["textDocument/definition"] = require("csharpls_extended").handler,
-    --                 ["textDocument/typeDefinition"] = require("csharpls_extended").handler
-    --             }
-    --         })
-    --     end,
-    --     dependencies = {
-    --         "neovim/nvim-lspconfig",
-    --     }
-    -- },
+    {
+        "Decodetalkers/csharpls-extended-lsp.nvim",
+        ft = "cs",
+        init = function()
+            require("csharpls_extended").buf_read_cmd_bind()
+        end,
+        dependencies = {
+            "neovim/nvim-lspconfig",
+        }
+    },
 }
