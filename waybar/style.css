@@ -13,8 +13,9 @@ window#waybar {
 
 #window {
     font-weight: bold;
-    font-family: "Ubuntu";
+    font-family: "FiraCode";
 }
+
 /*
 #workspaces {
     padding: 0 5px;
@@ -55,22 +56,12 @@ window#waybar {
 }
 
 #battery.charging {
+    color: green;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: black;
-    }
-}
 
 #battery.warning:not(.charging) {
-    color: white;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    color: red;
 }
 
 #cpu {

@@ -4,7 +4,7 @@ return {
         lazy = false,
         priority = 1000,
         init = function()
-            local color = "catppuccin-mocha"
+            local color = "rose-pine-moon"
             vim.g.mellow_italic_functions = true
             vim.g.mellow_bold_functions = true
 
