@@ -94,6 +94,24 @@ return {
         end
     },
     -- {
+    --     'stevearc/oil.nvim',
+    --     ---@module 'oil'
+    --     ---@type oil.SetupOpts
+    --     opts = {
+    --         keymaps = {
+    --             ["C-P"] = false,
+    --             ["C-S-P"] = "actions.preview",
+    --             ["<leader>pv"] = "actions.open"
+    --         }
+    --
+    --     },
+    --     -- Optional dependencies
+    --     dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    --     -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    --     -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    --     lazy = false,
+    -- }
+    -- {
     --     "kdheepak/lazygit.nvim",
     --     lazy = true,
     --     cmd = {

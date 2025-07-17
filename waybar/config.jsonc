@@ -63,8 +63,8 @@
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
+            "1": "_",
+            "2": "_",
             "active": "λ",
             "default": "_"
         },

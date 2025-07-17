@@ -2,21 +2,30 @@ return {
     {
         "mfussenegger/nvim-dap",
         dependencies = {
-            {
-                {
-                    "rcarriga/nvim-dap-ui",
-                    dependencies = {
-                        "nvim-neotest/nvim-nio"
-                    }
-                },
-            },
-            -- virtual text for the debugger
-            {
-                "theHamsta/nvim-dap-virtual-text",
-            },
+            "rcarriga/nvim-dap-ui",
+            "nvim-neotest/nvim-nio",
+            "jay-babu/mason-nvim-dap.nvim",
+            "theHamsta/nvim-dap-virtual-text",
         },
         config = function()
+            local mason_dap = require("mason-nvim-dap")
             local dap = require("dap")
+            local dapui = require("dapui")
+            local dap_virtual_text = require("nvim-dap-virtual-text")
+
+            -- Dap Virtual Text
+            dap_virtual_text.setup({})
+
+            mason_dap.setup({
+                handlers = {
+                    function(config)
+                        require("mason-nvim-dap").default_setup(config)
+                    end,
+                },
+            })
+            -- local dap_virtual_text = require("nvim-dap-virtual-text")
+            -- dap_virtual_text.enable()jk
+
             -- debug-config
             dap.adapters.coreclr = {
                 type = "executable",
@@ -40,7 +49,43 @@ return {
                 },
             }
 
-            local dapui = require("dapui")
+            dap.configurations.go = {
+                {
+                    type = "delve",
+                    name = "Debug",
+                    request = "launch",
+                    program = "${file}",
+                },
+                {
+                    type = "delve",
+                    name = "Debug test", -- configuration for debugging test files
+                    request = "launch",
+                    mode = "test",
+                    program = "${file}",
+                },
+                -- works with go.mod packages and sub packages
+                {
+                    type = "delve",
+                    name = "Debug test (go.mod)",
+                    request = "launch",
+                    mode = "test",
+                    program = "./${relativeFileDirname}",
+                },
+            }
+
+            dap.configurations.typescript = {
+                {
+                    name = 'Debug with Firefox',
+                    type = 'firefox',
+                    request = 'launch',
+                    reAttach = true,
+                    url = 'http://localhost:3000',
+                    webRoot = '${workspaceFolder}',
+                    firefoxExecutable = '/usr/bin/firefox'
+                }
+            }
+
+
             dapui.setup()
 
             dap.listeners.before.attach.dapui_config = function()
