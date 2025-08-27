@@ -53,6 +53,13 @@ return {
                 end,
                 desc = 'Grep project'
             },
+            {
+                "<leader>rp",
+                function()
+                    require("telescope.builtin").resume()
+                end,
+                desc = 'Resume Prior scope'
+            },
         }
     },
 }
