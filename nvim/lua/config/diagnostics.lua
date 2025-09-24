@@ -1,18 +1,23 @@
-local severity = vim.diagnostic.severity
+# Diagnostic Setup
+
+vim.diagnostic.config({
+    virtual_lines = true,
+})
 
 vim.keymap.set("n", "]e", function()
-    vim.diagnostic.goto_next({ severity = severity.ERROR })
+    vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = 1 })
 end)
+
 vim.keymap.set("n", "[e", function()
-    vim.diagnostic.goto_prev({ severity = severity.ERROR })
+    vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = -1 })
 end)
 
 vim.keymap.set("n", "]w", function()
-    vim.diagnostic.goto_next({ severity = severity.WARN })
+    vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = 1 })
 end)
 
 vim.keymap.set("n", "[w", function()
-    vim.diagnostic.goto_prev({ severity = severity.WARN })
+    vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = -1 })
 end)
 
 vim.keymap.set("n", "gl", function()
