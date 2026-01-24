@@ -25,6 +25,7 @@ return {
 
             ft("cs"):fmt("lsp")
             ft("ml"):fmt("lsp")
+            ft("nix"):fmt("lsp")
 
             vim.g.guard_config = {
                 fmt_on_save = true,
