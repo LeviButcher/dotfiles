@@ -101,6 +101,86 @@ return {
                 end,
                 desc = 'Swap Parameter Before'
             },
+            -- Movement Bindings
+            {
+                "]m",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_start("@function.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "]]",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_start("@class.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "]o",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_start({ "@loop.outer", "@loop.inner" },
+                        "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "]s",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_start("@local.scope", "locals")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "]z",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_start("@fold", "folds")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "]M",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_end("@function.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "][",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_next_end("@class.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "[m",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_previous_start("@function.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "[[",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_previous_start("@class.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "[M",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_previous_end("@function.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+            {
+                "[]",
+                function()
+                    require "nvim-treesitter-textobjects.move".goto_previous_end("@class.outer", "textobjects")
+                end,
+                mode = { "x", "o", "n" },
+            },
+
         }
     },
 
