@@ -59,6 +59,16 @@ return {
         event = "VeryLazy",
     },
     {
+        "nvim-mini/mini.pairs",
+        version = false,
+        opt = {},
+        config = function()
+            require("mini.pairs").setup({
+            })
+        end
+
+    },
+    {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
@@ -89,7 +99,10 @@ return {
     },
     {
         "FabijanZulj/blame.nvim",
-        opt = {}
+        lazy = false,
+        config = function()
+            require('blame').setup()
+        end,
     },
     {
         'stevearc/oil.nvim',
@@ -99,6 +112,10 @@ return {
             keymaps = {
                 ["<C-p>"] = false,
                 ["="] = "actions.preview"
+            },
+            view_options = {
+                show_hidden = true
+
             }
         },
         -- Optional dependencies

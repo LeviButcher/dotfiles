@@ -183,7 +183,6 @@ return {
 
         }
     },
-
     {
         "nvim-treesitter/nvim-treesitter-context",
         dependencies = {
@@ -193,5 +192,14 @@ return {
             enable = true,
             max_lines = 3
         }
-    }
+    },
+    {
+        'nvim-mini/mini.ai',
+        version = false,
+        config = function()
+            require("mini.ai").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
 }
