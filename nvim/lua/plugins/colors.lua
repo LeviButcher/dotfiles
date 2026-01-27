@@ -4,14 +4,15 @@ return {
         lazy = false,
         priority = 1000,
         init = function()
-            local color = "rose-pine-moon"
+            local color = "tokyonight-night"
             vim.g.mellow_italic_functions = true
             vim.g.mellow_bold_functions = true
 
             vim.cmd.colorscheme(color)
-        end
-    },
-    {
-        "rose-pine/neovim",
-    },
+        end,
+        dependencies = {
+            "rose-pine/neovim",
+            "folke/tokyonight.nvim",
+        }
+    }
 }
