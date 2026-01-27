@@ -53,7 +53,7 @@ return {
         },
     },
     {
-        "echasnovski/mini.comment",
+        "nvim-mini/mini.comment",
         version = false,
         opt = {},
         event = "VeryLazy",
@@ -89,9 +89,7 @@ return {
     },
     {
         "FabijanZulj/blame.nvim",
-        config = function()
-            require("blame").setup()
-        end
+        opt = {}
     },
     {
         'stevearc/oil.nvim',
