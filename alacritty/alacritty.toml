@@ -7,5 +7,15 @@ family = "firacode nerd font"
 [env]
 term = "xterm-256color"
 
-# [font.normal]
-# family = "FiraCode"
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "Buttonless"
+opacity = 0.8
+blur = true
+
+[general]
+import = ["tokyo-night.toml"]
+
+
+
