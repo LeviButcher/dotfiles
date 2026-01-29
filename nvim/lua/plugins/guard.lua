@@ -1,6 +1,7 @@
 return {
     {
         "nvimdev/guard.nvim",
+        enable = false,
         dependencies = {
             "nvimdev/guard-collection",
         },
