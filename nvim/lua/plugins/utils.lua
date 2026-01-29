@@ -59,14 +59,20 @@ return {
         event = "VeryLazy",
     },
     {
-        "nvim-mini/mini.pairs",
-        version = false,
-        opt = {},
-        config = function()
-            require("mini.pairs").setup({
-            })
-        end
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true,
+        -- use opts = {} for passing setup options
+        -- this is equivalent to setup({}) function
+        dependencies = {
+            {
+                "windwp/nvim-ts-autotag",
+                config = function()
+                    require('nvim-ts-autotag').setup()
+                end
+            }
 
+        }
     },
     {
         "kylechui/nvim-surround",
