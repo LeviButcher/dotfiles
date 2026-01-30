@@ -1,67 +1,49 @@
-return {
-    {
-        "nvim-telescope/telescope.nvim",
-        version = "*",
-        dependencies = { "nvim-lua/plenary.nvim",
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-        },
-        keys = {
-            {
-                "<leader>ff",
+local gh = function(x) return 'https://github.com/' .. x end
+local cb = function(x) return 'https://codeberg.org/' .. x end
+
+vim.pack.add({
+    gh("nvim-telescope/telescope.nvim"),
+    { src = gh('nvim-telescope/telescope-fzf-native.nvim'), build = 'make' }
+})
+
+
+vim.keymap.set('n', "<leader>ff",
                 function()
                     require("telescope.builtin").find_files()
-                end,
-                desc = 'Find Files'
-            },
-            {
-                "<leader>fg",
+                end)
+
+vim.keymap.set('n', "<leader>fg",
                 function()
                     require("telescope.builtin").live_grep()
-                end,
-                desc = 'Rip Grep project'
-            },
-            {
-                "<leader>fb",
+                end)
+
+vim.keymap.set('n', "<leader>fb",
                 function()
                     require("telescope.builtin").buffers()
-                end,
-                desc = 'Search Buffers'
-            },
-            {
-                "<leader>fh",
+                end)
+
+vim.keymap.set('n', "<leader>fh",
                 function()
                     require("telescope.builtin").help_tags()
-                end,
-                desc = 'Search Help wiki'
-            },
-            {
-                "<C-k>",
+                end)
+
+vim.keymap.set('n', "<C-k>",
                 function()
                     require("telescope.builtin").keymaps()
-                end,
-                desc = 'Search Keymaps'
-            },
-            {
-                "<C-p>",
+                end)
+
+vim.keymap.set('n', "<C-p>",
                 function()
                     require("telescope.builtin").git_files()
-                end,
-                desc = 'Find Files in Git'
-            },
-            {
-                "<leader>ps",
+                end)
+                
+vim.keymap.set('n', "<leader>ps",
                 function()
                     require("telescope.builtin").grep_string({ search = vim.fn.input("Grep >") })
-                end,
-                desc = 'Grep project'
-            },
-            {
+                end)
+
+vim.keymap.set('n', 
                 "<leader>rp",
                 function()
                     require("telescope.builtin").resume()
-                end,
-                desc = 'Resume Prior scope'
-            },
-        }
-    },
-}
+                end)

@@ -1,25 +1,13 @@
-return {
-    {
-        "catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
-        init = function()
-            local color = "tokyonight-night"
-            vim.g.mellow_italic_functions = true
-            vim.g.mellow_bold_functions = true
+vim.pack.add({
+    "https://github.com/folke/tokyonight.nvim",
+    "https://github.com/catppuccin/nvim",
+    "https://github.com/rose-pine/neovim",
+})
 
-            vim.cmd.colorscheme(color)
-        end,
-        dependencies = {
-            "rose-pine/neovim",
-            {
-                "folke/tokyonight.nvim",
-                opts = {
-                    transparent = true,
-                    sidebars = 'transparent',
-                    floats = 'transparent'
-                }
-            },
-        }
-    }
-}
+require('tokyonight').setup({
+    transparent = true,
+    sidebars = 'transparent',
+    floats = 'transparent'
+})
+
+vim.cmd.colorscheme("tokyonight")

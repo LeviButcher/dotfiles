@@ -30,16 +30,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
             end
 
             -- Inlay hints
-            if client:supports_method("textDocument/inlayHints") then
+            if client:supports_method("textDocument/inlayHint") then
                 vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
             end
 
-            -- if client:supports_method("textDocument/documentColor") then
-            --     vim.lsp.document_color.enable(true, args.buf, {
-            --         style = "background", -- 'background', 'foreground', or 'virtual'
-            --     })
-            -- end
-
+            if client:supports_method("textDocument/documentColor") then
+                vim.lsp.document_color.enable(true, args.buf, {
+                    style = "background", -- 'background', 'foreground', or 'virtual'
+                })
+            end
 
 
             -- Auto-format ("lint") on save.
@@ -63,4 +62,16 @@ vim.lsp.enable({
     "lua_ls",
     "ts_ls",
     "rnix"
+})
+
+
+-- treesitter
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        local filetype = vim.bo.filetype
+        if filetype and filetype ~= "" then
+            pcall(vim.treesitter.start)
+        end
+    end,
 })

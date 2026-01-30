@@ -1,141 +1,56 @@
-return {
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        opt = {},
-        keys = {
-            {
-                "<leader>a",
-                function()
-                    require("harpoon"):list():add()
-                end,
-                desc = "Add (Harpoon)"
-            },
-            {
-                "<C-e>",
-                function()
-                    local harpoon = require("harpoon")
-                    harpoon.ui:toggle_quick_menu(harpoon:list())
-                end,
-                desc = "Menu (Harpoon)"
-            },
-            {
-                "<C-h>",
-                function() require("harpoon"):list():select(1) end,
-                desc = "Select #1 (Harpoon)"
-            },
-            {
-                "<C-t>",
-                function() require("harpoon"):list():select(2) end,
-                desc = "Select #2 (Harpoon)"
-            },
-            {
-                "<C-n>",
-                function() require("harpoon"):list():select(3) end,
-                desc = "Select #3 (Harpoon)"
-            },
-            {
-                "<C-s>",
-                function() require("harpoon"):list():select(4) end,
-                desc = "Select #4 (Harpoon)"
-            },
-            {
-                "<C-S-P>",
-                function() require("harpoon"):list():prev() end,
-                desc = "Select Prev (Harpoon)"
-            },
-            {
-                "<C-S-N>",
-                function() require("harpoon"):list():next() end,
-                desc = "Select Next (Harpoon)"
-            },
-        },
-    },
-    {
-        "nvim-mini/mini.comment",
-        version = false,
-        opt = {},
-        event = "VeryLazy",
-    },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true,
-        -- use opts = {} for passing setup options
-        -- this is equivalent to setup({}) function
-        dependencies = {
-            {
-                "windwp/nvim-ts-autotag",
-                config = function()
-                    require('nvim-ts-autotag').setup()
-                end
-            }
+local gh = function(x) return 'https://github.com/' .. x end
 
-        }
-    },
-    {
-        "kylechui/nvim-surround",
-        version = "*", -- Use for stability; omit to use `main` branch for the latest features
-        event = "VeryLazy",
-        config = function()
-            require("nvim-surround").setup({
-                -- Configuration here, or leave empty to use defaults
-            })
-        end
-    },
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
-            "nvim-telescope/telescope.nvim", -- optional
-        },
-        config = true,
-        keys = {
-            {
-                "<leader>gs",
-                function()
-                    require("neogit").open()
-                end,
-                desc = "Open (Neogit)"
-            },
-        },
-        opt = {}
-    },
-    {
-        "FabijanZulj/blame.nvim",
-        lazy = false,
-        config = function()
-            require('blame').setup()
-        end,
-    },
-    {
-        'stevearc/oil.nvim',
-        ---@module 'oil'
-        ---@type oil.SetupOpts
-        opts = {
-            keymaps = {
-                ["<C-p>"] = false,
-                ["="] = "actions.preview"
-            },
-            view_options = {
-                show_hidden = true
+vim.pack.add({
+    gh("nvim-lua/plenary.nvim"),
+    gh("windwp/nvim-ts-autotag"),
+    gh("sindrets/diffview.nvim"),
+    gh("nvim-mini/mini.icons"),
 
-            }
-        },
-        -- Optional dependencies
-        dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-        -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-        -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-        lazy = false,
-        keys = {
-            {
-                "<leader>pv",
-                function()
-                    require('oil').open()
-                end
-            }
-        }
+    { src = gh("ThePrimeagen/harpoon"), version = "harpoon2" },
+    gh("nvim-mini/mini.comment"),
+    gh("windwp/nvim-autopairs"),
+    gh("kylechui/nvim-surround"),
+    gh("NeogitOrg/neogit"),
+    gh("FabijanZulj/blame.nvim"),
+    gh('stevearc/oil.nvim')
+})
+
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set('n','<leader>a', function() harpoon:list():add() end )
+vim.keymap.set('n', "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', "<C-h>", function() harpoon:list():select(1) end)
+vim.keymap.set('n', "<C-t>", function() harpoon:list():select(2) end)
+vim.keymap.set('n', "<C-n>", function() harpoon:list():select(3) end)
+vim.keymap.set('n', "<C-s>", function() harpoon:list():select(4) end)
+vim.keymap.set('n', "<C-S-P>", function() harpoon:list():prev() end)
+vim.keymap.set('n', "<C-S-N>", function() harpoon:list():next() end)
+
+require("mini.comment").setup()
+
+require('nvim-autopairs').setup()
+
+require("nvim-surround").setup()
+
+require("neogit").setup({})
+
+vim.keymap.set('n', '<leader>gs', function() require('neogit').open() end)
+
+require("blame").setup()
+
+require('mini.icons').setup()
+require('oil').setup({
+    keymaps = {
+        ["<C-p>"] = false,
+        ["="] = "actions.preview"
+    },
+    view_options = {
+        show_hidden = true
+
     }
-}
+})
+
+vim.keymap.set('n', '<leader>pv', function() require('oil').open() end)
+
+
