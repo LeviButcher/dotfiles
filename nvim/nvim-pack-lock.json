@@ -12,6 +12,14 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
+    "guard-collection": {
+      "rev": "411971cb8b4eadfa8a4d5a64edbfda606ab30002",
+      "src": "https://github.com/nvimdev/guard-collection"
+    },
+    "guard.nvim": {
+      "rev": "8e72406479681db9e347d951759c7a14e7937e31",
+      "src": "https://github.com/nvimdev/guard.nvim"
+    },
     "harpoon": {
       "rev": "87b1a3506211538f460786c23f98ec63ad9af4e5",
       "src": "https://github.com/ThePrimeagen/harpoon",
@@ -44,6 +52,10 @@
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-lspconfig": {
+      "rev": "79c9a15be5731bc8694840a8fb0c9141c20a80c0",
+      "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
       "rev": "1098d7b3c34adcfa7feb3289ee434529abd4afd1",
