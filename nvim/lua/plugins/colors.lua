@@ -1,7 +1,9 @@
+local help = require('lib/helpers')
+
 vim.pack.add({
-    "https://github.com/folke/tokyonight.nvim",
-    "https://github.com/catppuccin/nvim",
-    "https://github.com/rose-pine/neovim",
+    help.gh("folke/tokyonight.nvim"),
+    help.gh("catppuccin/nvim"),
+    help.gh("rose-pine/neovim"),
 })
 
 require('tokyonight').setup({

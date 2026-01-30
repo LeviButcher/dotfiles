@@ -1,8 +1,8 @@
-local gh = function(x) return 'https://github.com/' .. x end
+local help = require('lib/helpers')
 
 vim.pack.add({
-    gh("mason-org/mason.nvim"),
-    gh("Decodetalkers/csharpls-extended-lsp.nvim"),
+    help.gh("mason-org/mason.nvim"),
+    help.gh("Decodetalkers/csharpls-extended-lsp.nvim"),
 })
 
 require("mason").setup()

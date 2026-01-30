@@ -1,24 +1,24 @@
-local gh = function(x) return 'https://github.com/' .. x end
+local help = require('lib/helpers')
 
 vim.pack.add({
-    gh("nvim-lua/plenary.nvim"),
-    gh("windwp/nvim-ts-autotag"),
-    gh("sindrets/diffview.nvim"),
-    gh("nvim-mini/mini.icons"),
+    help.gh("nvim-lua/plenary.nvim"),
+    help.gh("windwp/nvim-ts-autotag"),
+    help.gh("sindrets/diffview.nvim"),
+    help.gh("nvim-mini/mini.icons"),
 
-    { src = gh("ThePrimeagen/harpoon"), version = "harpoon2" },
-    gh("nvim-mini/mini.comment"),
-    gh("windwp/nvim-autopairs"),
-    gh("kylechui/nvim-surround"),
-    gh("NeogitOrg/neogit"),
-    gh("FabijanZulj/blame.nvim"),
-    gh('stevearc/oil.nvim')
+    { src = help.gh("ThePrimeagen/harpoon"), version = "harpoon2" },
+    help.gh("nvim-mini/mini.comment"),
+    help.gh("windwp/nvim-autopairs"),
+    help.gh("kylechui/nvim-surround"),
+    help.gh("NeogitOrg/neogit"),
+    help.gh("FabijanZulj/blame.nvim"),
+    help.gh('stevearc/oil.nvim')
 })
 
 local harpoon = require("harpoon")
 harpoon:setup()
 
-vim.keymap.set('n','<leader>a', function() harpoon:list():add() end )
+vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
 vim.keymap.set('n', "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 vim.keymap.set('n', "<C-h>", function() harpoon:list():select(1) end)
 vim.keymap.set('n', "<C-t>", function() harpoon:list():select(2) end)
@@ -52,5 +52,3 @@ require('oil').setup({
 })
 
 vim.keymap.set('n', '<leader>pv', function() require('oil').open() end)
-
-
