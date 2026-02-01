@@ -1,11 +1,12 @@
 require('plugins/colors')
+require('plugins/snacks') -- Snacks need to be loaded early on
 require('plugins/lsp')
 require('plugins/treesitter')
 require('plugins/blink')
-require('plugins/telescope')
 require('plugins/trouble')
 require('plugins/guard')
 require('plugins/whichkey')
 require('plugins/opencode')
 require('plugins/actions-preview')
+require('plugins/git')
 require('plugins/utils')

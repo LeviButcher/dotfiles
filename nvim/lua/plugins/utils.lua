@@ -10,7 +10,6 @@ vim.pack.add({
     help.gh("nvim-mini/mini.comment"),
     help.gh("windwp/nvim-autopairs"),
     help.gh("kylechui/nvim-surround"),
-    help.gh("NeogitOrg/neogit"),
     help.gh("FabijanZulj/blame.nvim"),
     help.gh('stevearc/oil.nvim')
 })
@@ -18,8 +17,11 @@ vim.pack.add({
 local harpoon = require("harpoon")
 harpoon:setup()
 
-vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end, { desc = "Harpoon add file" })
-vim.keymap.set('n', "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+vim.keymap.set('n', '<C-a>', function() harpoon:list():add() end, { desc = "Harpoon add file" })
+vim.keymap.set('n', "<C-e>",
+    function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+    end,
     { desc = "Harpoon toggle menu" })
 vim.keymap.set('n', "<C-q>", function() harpoon:list():select(1) end, { desc = "Harpoon goto 1" })
 vim.keymap.set('n', "<C-w>", function() harpoon:list():select(2) end, { desc = "Harpoon goto 2" })
@@ -32,13 +34,10 @@ require('nvim-autopairs').setup()
 
 require("nvim-surround").setup()
 
-require("neogit").setup({})
-
-vim.keymap.set('n', '<leader>gs', function() require('neogit').open() end, { desc = "Neogit status" })
-
 require("blame").setup()
 
 require('mini.icons').setup()
+
 require('oil').setup({
     keymaps = {
         ["<C-p>"] = false,
