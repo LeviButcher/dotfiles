@@ -47,6 +47,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             end)
         end
 
+
         if client:supports_method("textDocument/inlineCompletion") then
             vim.lsp.inline_completion.enable(true, { bufnr = args.buf })
         end
