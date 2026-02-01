@@ -8,5 +8,10 @@ vim.pack.add({
 
 
 require("blink.cmp").setup({
-    signature = { enabled = true }
+
+    signature = { enabled = true },
+    completion = {
+        trigger = { show_on_keyword = true },
+        ghost_text = { enabled = true }
+    }
 })
