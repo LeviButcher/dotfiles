@@ -6,17 +6,29 @@ vim.pack.add({
     help.gh("nvim-treesitter/nvim-treesitter-context"),
 })
 
-require('nvim-treesitter').install({
-    "c", "lua", "vim", "vimdoc", "query"
+-- start treesitter on all FileType
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        local filetype = vim.bo.filetype
+        if filetype and filetype ~= "" then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            pcall(vim.treesitter.start)
+        end
+    end,
 })
+
+-- require('nvim-treesitter').install({
+--     "c", "lua", "vim", "vimdoc", "query"
+-- })
 
 require("treesitter-context").setup({
     enable = true,
     max_lines = 3
 })
 
---         -- Disable entire built-in ftplugin mappings to avoid conflicts.
---         -- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+-- Disable entire built-in ftplugin mappings to avoid conflicts.
+-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
 vim.g.no_plugin_maps = true
 
 require("nvim-treesitter-textobjects").setup({
