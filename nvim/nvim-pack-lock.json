@@ -4,6 +4,10 @@
       "rev": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "actions-preview.nvim": {
+      "rev": "cb938c25edaac38d362555f19244a9cb85d561e8",
+      "src": "https://github.com/aznhe21/actions-preview.nvim"
+    },
     "blame.nvim": {
       "rev": "f3f6153ea94e1120f2776f22bbbd63c4aeebaf32",
       "src": "https://github.com/FabijanZulj/blame.nvim"
