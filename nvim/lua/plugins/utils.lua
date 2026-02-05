@@ -14,20 +14,6 @@ vim.pack.add({
     help.gh('stevearc/oil.nvim')
 })
 
-local harpoon = require("harpoon")
-harpoon:setup()
-
-vim.keymap.set('n', '<A-a>', function() harpoon:list():add() end, { desc = "Harpoon add file" })
-vim.keymap.set('n', "<A-h>",
-    function()
-        harpoon.ui:toggle_quick_menu(harpoon:list())
-    end,
-    { desc = "Harpoon toggle menu" })
-vim.keymap.set('n', "<A-q>", function() harpoon:list():select(1) end, { desc = "Harpoon goto 1" })
-vim.keymap.set('n', "<A-w>", function() harpoon:list():select(2) end, { desc = "Harpoon goto 2" })
-vim.keymap.set('n', "<A-e>", function() harpoon:list():select(3) end, { desc = "Harpoon goto 3" })
-vim.keymap.set('n', "<A-r>", function() harpoon:list():select(4) end, { desc = "Harpoon goto 4" })
-
 require("mini.comment").setup()
 
 require('nvim-autopairs').setup()
@@ -41,11 +27,31 @@ require('mini.icons').setup()
 require('oil').setup({
     keymaps = {
         ["<C-p>"] = false,
-        ["="] = "actions.preview"
+        ["="] = "actions.preview",
+        ["<C-l>"] = false,
+        ["<C-h>"] = false
     },
     view_options = {
         show_hidden = true
     }
 })
 
-vim.keymap.set('n', '<leader>pv', function() require('oil').open() end, { desc = "Oil file browser" })
+vim.keymap.set('n', '<leader>pv',
+    function() require('oil').open() end,
+    { desc = "file browser (Oil)" })
+
+local harpoon = require("harpoon")
+harpoon:setup()
+
+vim.keymap.set('n', '<leader>a',
+    function() harpoon:list():add() end,
+    { desc = "add file (Harpoon)" })
+vim.keymap.set('n', "<C-e>",
+    function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+    end,
+    { desc = "toggle menu (Harpoon)" })
+vim.keymap.set('n', "<C-h>", function() harpoon:list():select(1) end, { desc = "goto 1 (Harpoon)" })
+vim.keymap.set('n', "<C-t>", function() harpoon:list():select(2) end, { desc = "goto 2 (Harpoon)" })
+vim.keymap.set('n', "<C-n>", function() harpoon:list():select(3) end, { desc = "goto 3 (Harpoon)" })
+vim.keymap.set('n', "<C-s>", function() harpoon:list():select(4) end, { desc = "goto 4 (Harpoon)" })

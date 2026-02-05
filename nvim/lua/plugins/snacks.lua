@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>gs", Snacks.lazygit.open, { desc = "Lazygit" })
 
 vim.keymap.set('n', "<leader>ff",
     function()
-        Snacks.picker.files()
+        Snacks.picker.files({ hidden = true })
     end,
     { desc = "Snacks find files" }
 )
