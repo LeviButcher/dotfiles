@@ -86,5 +86,6 @@ vim.lsp.enable({
     "ts_ls",
     "csharp_ls",
     "eslint",
-    "nil_ls"
+    "nil_ls",
+    "gopls"
 })

@@ -1,8 +1,9 @@
 [font]
-size = 16.0
+size = 12.0
 
 [font.normal]
-family = "firacode nerd font"
+style = "Regular"
+family = "FiraCode Nerd Font"
 
 [env]
 term = "xterm-256color"
@@ -16,6 +17,11 @@ blur = true
 
 [general]
 import = ["tokyo-night.toml"]
+
+[mouse]
+hide_when_typing = true
+
+
 
 
 
