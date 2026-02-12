@@ -11,7 +11,8 @@ vim.pack.add({
     help.gh("windwp/nvim-autopairs"),
     help.gh("kylechui/nvim-surround"),
     help.gh("FabijanZulj/blame.nvim"),
-    help.gh('stevearc/oil.nvim')
+    help.gh('stevearc/oil.nvim'),
+    help.gh('m4xshen/hardtime.nvim')
 })
 
 require("mini.comment").setup()
@@ -55,3 +56,6 @@ vim.keymap.set('n', "<C-h>", function() harpoon:list():select(1) end, { desc = "
 vim.keymap.set('n', "<C-t>", function() harpoon:list():select(2) end, { desc = "goto 2 (Harpoon)" })
 vim.keymap.set('n', "<C-n>", function() harpoon:list():select(3) end, { desc = "goto 3 (Harpoon)" })
 vim.keymap.set('n', "<C-s>", function() harpoon:list():select(4) end, { desc = "goto 4 (Harpoon)" })
+
+
+require("hardtime").setup({})
