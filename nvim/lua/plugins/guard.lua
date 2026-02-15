@@ -9,13 +9,14 @@ local ft = require("guard.filetype")
 
 ft("lua"):fmt("lsp")
 
-ft("typescript,javascript,typescriptreact"):fmt("prettier"):append({
-    cmd = "rustywind",
-    stdin = true,
-    args = {
-        "--stdin",
-    },
-})
+ft("typescript,javascript,typescriptreact")
+-- :fmt("biome"):fmt("prettier"):append({
+--     cmd = "rustywind",
+--     stdin = true,
+--     args = {
+--         "--stdin",
+--     },
+-- })
 
 ft("json"):fmt("prettier")
 

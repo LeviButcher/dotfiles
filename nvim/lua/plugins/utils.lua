@@ -18,6 +18,7 @@ vim.pack.add({
 require("mini.comment").setup()
 
 require('nvim-autopairs').setup()
+require('nvim-ts-autotag').setup({})
 
 require("nvim-surround").setup()
 

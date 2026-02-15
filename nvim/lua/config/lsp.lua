@@ -87,5 +87,7 @@ vim.lsp.enable({
     "csharp_ls",
     "eslint",
     "nil_ls",
-    "gopls"
+    "gopls",
+    "biome",
+    "tailwindcss"
 })
